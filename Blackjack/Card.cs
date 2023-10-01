@@ -44,8 +44,6 @@
 
             for (int cardNum = 1; cardNum < 14; cardNum++) {
 
-                List<string> titles = new List<string>();
-
                 Card currentCard = new Card();
                 currentCard.Type = type;
                 currentCard.Value = cardValue;
