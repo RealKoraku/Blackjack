@@ -2,6 +2,7 @@
     string _title;
     string _type;
     int _value;
+    ConsoleColor _color;
 
     public string Title {
         get { return _title; }
@@ -16,6 +17,11 @@
     public int Value {
         get { return _value; }
         set { _value = value; }
+    }
+
+    public ConsoleColor Color {
+        get { return _color; }
+        set { _color = value; }
     }
 
     public static List<Card> BuildDeck() {
@@ -47,10 +53,10 @@
 
                 deck.Add(currentCard);
                 
-                if (cardType == 1 || cardType == 3) {
-                    PrintRedLn(currentCard.Title);
+                if (cardType % 2 == 0) {
+                    currentCard.Color= ConsoleColor.Black;
                 } else {
-                    PrintBlackLn(currentCard.Title);
+                    currentCard.Color = ConsoleColor.DarkRed;
                 }
 
                 if (cardNum >= 10) {
